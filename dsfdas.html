@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Ucapan Selamat Ulang Tahun</title>
+</head>
+<body>
+
+<h1>Ucapan Selamat Ulang Tahun</h1>
+
+<!-- Formulir untuk mengisi nama dan tanggal lahir -->
+<form>
+  Nama:<br>
+  <input type="text" name="nama"><br>
+  Tanggal Lahir:<br>
+  <input type="date" name="tanggal_lahir"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<!-- Script untuk menghitung usia -->
+<script>
+  // Dapatkan tanggal sekarang
+  var sekarang = new Date();
+
+  // Dapatkan tanggal lahir yang diinputkan
+  var tanggal_lahir = new Date(document.querySelector("input[name=tanggal_lahir]").value);
+
+  // Hitung selisih antara tanggal sekarang dan tanggal lahir
+  var selisih = sekarang - tanggal_lahir;
+
+  // Hitung usia dengan mengkonversi selisih dari milisecond ke tahun
+  var usia = Math.floor(selisih / (365.25 * 24 * 60 * 60 * 1000));
+
+  // Tampilkan ucapan selamat ulang tahun
+  alert("Selamat ulang tahun, " + document.querySelector("input[name=nama]").value + "! Anda berusia " + usia + " tahun.");
+</script>
+
+</body>
+</html>
